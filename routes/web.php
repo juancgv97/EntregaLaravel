@@ -39,6 +39,9 @@ Route::post('login', [LoginController::class, 'store']);
 Route::post('registro.store', [RegistroController::class, 'store']);
 Route::get('home', [LoginController::class, 'index']);
 Route::get('inicio', [FavoritoController::class, 'index']);
+Route::get('listfavoritos', function () {
+    return view('Favorito.favorito.blade');
+});
 
 
 

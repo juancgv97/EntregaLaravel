@@ -11,24 +11,18 @@ class FavoritoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
-        return view('Favorito.favorito');
-       
-
-       /* if (!isset($_SESSION['idusuario'])) {
-            
-            return redirect('/')->with('error','Se debe iniciar sesion');
-            
+      
+        $idusuario = $request->get('usuario');
+        $Objfavorito = \DB::table('favoritos')->select()->where('id_usuario',$idusuario)->get();
 
 
+        return view('Favorito.favorito')->with('obj', $Objfavorito );
 
-        }else{
 
-            return view('Favorito.favorito');
-
-        }*/
+     
+             
 
 
     }
@@ -63,6 +57,9 @@ class FavoritoController extends Controller
     public function show($id)
     {
         //
+
+
+
     }
 
     /**

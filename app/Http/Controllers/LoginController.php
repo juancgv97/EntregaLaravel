@@ -42,6 +42,7 @@ class LoginController extends Controller
         $pass = $request->input('pass', 'default');
         $Objlogin = new Login;
         $id_login = 0;
+        $pass1 = 0;
 
         /*$Objlogin = \DB::table('logins')->select('id')->where('usuario',$usuario)
         ->where('contraseña',$pass)->get();*/
@@ -61,8 +62,11 @@ class LoginController extends Controller
                 $idusuario = $data->id_usuario;
                 
             }
-           
-            return redirect('inicio');
+
+            return redirect()->action(
+
+                [FavoritoController::class,'index'],['usuario'=> $idusuario] 
+            );
 
 
         }else{
