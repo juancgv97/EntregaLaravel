@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-08-2021 a las 05:01:10
+-- Tiempo de generación: 23-08-2021 a las 07:08:38
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 8.0.3
 
@@ -35,6 +35,15 @@ CREATE TABLE `favoritos` (
   `Tema` varchar(50) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `favoritos`
+--
+
+INSERT INTO `favoritos` (`id_favorito`, `Url`, `Tema`, `id_usuario`) VALUES
+(1, 'www.google.com', 'buscador', 21),
+(2, 'www.youtube.com', 'videos', 21),
+(3, 'www.facebook.com', 'Red social', 21);
 
 -- --------------------------------------------------------
 
@@ -71,7 +80,8 @@ INSERT INTO `logins` (`id`, `Usuario`, `pass`) VALUES
 (16, 'asd', '789'),
 (17, '123645', '123'),
 (18, '1234', '12345'),
-(32, 'ff', '$2y$10$5hdL2b4YhJsXi4d7zm5R9uKPGzuU14WiVCe/8Rm1Z/naqObNpFTq2');
+(32, 'ff', '$2y$10$5hdL2b4YhJsXi4d7zm5R9uKPGzuU14WiVCe/8Rm1Z/naqObNpFTq2'),
+(33, 'hibrid', '$2y$10$nlp9u/rRTPwFV7o9EOCDx.HK.b4LboLq.PGxDdKwqGunKAGyLlBV.');
 
 -- --------------------------------------------------------
 
@@ -91,7 +101,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `Nombre`, `Apellido`, `id_login`) VALUES
-(20, 'ff', 'ff', 32);
+(20, 'ff', 'ff', 32),
+(21, 'jair', 'leon', 33);
 
 --
 -- Índices para tablas volcadas
@@ -125,19 +136,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `favoritos`
 --
 ALTER TABLE `favoritos`
-  MODIFY `id_favorito` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_favorito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `logins`
 --
 ALTER TABLE `logins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Restricciones para tablas volcadas

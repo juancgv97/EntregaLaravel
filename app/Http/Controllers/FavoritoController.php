@@ -16,7 +16,7 @@ class FavoritoController extends Controller
       
         $idusuario = $request->get('usuario');
         $Objfavorito = \DB::table('favoritos')->select()->where('id_usuario',$idusuario)->get();
-
+        //USUARIO 21
 
         return view('Favorito.favorito')->with('obj', $Objfavorito );
 
